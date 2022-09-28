@@ -13,6 +13,19 @@
         background-image: url("bg.jpg");
         background-color: #cccccc;
         }
+
+        form, label, p {
+            color: white !important;
+        }
+        input, select, textarea{
+            color: #000;
+        }
+      
+        input::placeholder{
+        color: #f00;
+        }
+
+
         </style>
 
 </head>
@@ -133,8 +146,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <div class="container-fluid p-5 text-white text-center">
-  <h1>Test STK Push</h1>
-  <p>Enter Your Phone number and submit</p> 
+  <h1>Complete Checkout</h1>
+  <p>Enter Your Phone number and  Click submit to complete Checkout of amount 1 Ksh </p> 
   <form method="post" action="">
   Phone Number <input type="text" name="phone" class="m-2" placeholder="0700000000" ><br>
    <input type="submit" class="btn btn-success" value="Submit Request" >
