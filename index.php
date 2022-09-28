@@ -159,7 +159,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
   
   <form method="post" action="">
-  Mobile Number <input type="text" name="phone" class="m-2" placeholder="0700000000" ><br>
+  <input type="text" name="phone" class="m-2" placeholder="0700000000" ><br>
    <input type="submit" class="btn btn-success" value="Complete Checkout" >
 </form>
 
