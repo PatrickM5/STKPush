@@ -20,10 +20,15 @@
         input, select, textarea{
             color: #000;
         }
-      
-        input::placeholder{
+        input[type="text"], textarea {
+
+            background-color : white; 
+
+            }
+                
+        /* input::placeholder{
         color: #f00;
-        }
+        } */
 
 
         </style>
@@ -146,11 +151,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <div class="container-fluid p-5 text-white text-center">
-  <h1>Complete Checkout</h1>
-  <p>Enter Your Phone number and  Click submit to complete Checkout of amount 1 Ksh </p> 
+ <h4> Checkout Method: M-Pesa Express</h4>
+ <h4>Total Amount: 1</h4>
+
+  <p>Enter your mobile number and click [Complete Checkout]</p> 
+  
+  
+  
   <form method="post" action="">
-  Phone Number <input type="text" name="phone" class="m-2" placeholder="0700000000" ><br>
-   <input type="submit" class="btn btn-success" value="Submit Request" >
+  Mobile Number <input type="text" name="phone" class="m-2" placeholder="0700000000" ><br>
+   <input type="submit" class="btn btn-success" value="Complete Checkout" >
 </form>
 
 <?= isset( $_POST['message'] ) ? $_POST['message'] : ''; ?>
