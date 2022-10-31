@@ -23,20 +23,20 @@ header('Content-Type: application/json; charset=utf-8');  // <-- header declarat
         $LastName = $data->{"LastName"};
 
             if ($BusinessShortCode == 7146151) {
-               echo json_encode('{"ResultCode":"0","ResultDesc":"Accepted"}');
+               echo '{"ResultCode":"0","ResultDesc":"Accepted"}';
                
                // $this->saveValidation($data,"SUCCESS", "");
             }else if ($BusinessShortCode == 328100) {
-                echo json_encode('{"ResultCode":"0","ResultDesc":"Accepted"}');
+                echo '{"ResultCode":"0","ResultDesc":"Accepted"}';
                
                // $this->saveValidation($data,"SUCCESS", "");
             }else if ($BusinessShortCode == 328103) {
-                echo json_encode('{"ResultCode":"0","ResultDesc":"Accepted"}');
+                echo '{"ResultCode":"0","ResultDesc":"Accepted"}';
                
                // $this->saveValidation($data,"SUCCESS", "");
             }
             else{
-               echo json_encode('{"ResultCode":"0","ResultDesc":"Accepted"}');
+               echo '{"ResultCode":"0","ResultDesc":"Accepted"}';
                 //$this->saveValidation($data,"SUCCESS", "");
             }
 
