@@ -22,7 +22,7 @@ header('Content-Type: application/json; charset=utf-8');  // <-- header declarat
         $MiddleName = $data->{"MiddleName"};
         $LastName = $data->{"LastName"};
 
-        $result ="{'ResultCode':'0','ResultDesc':'Accepted'}";
+        $result ='{"ResultCode":"0","ResultDesc":"Accepted"}';
             if ($BusinessShortCode == 7146151) {
                echo json_encode( $result, JSON_UNESCAPED_SLASHES);
                
