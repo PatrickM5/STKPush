@@ -22,21 +22,22 @@ header('Content-Type: application/json; charset=utf-8');  // <-- header declarat
         $MiddleName = $data->{"MiddleName"};
         $LastName = $data->{"LastName"};
 
+        $result ='{"ResultCode":"0","ResultDesc":"Accepted"}';
             if ($BusinessShortCode == 7146151) {
-               echo '{"ResultCode":"0","ResultDesc":"Accepted"}';
+               return json_encode($result) ;
                
                // $this->saveValidation($data,"SUCCESS", "");
             }else if ($BusinessShortCode == 328100) {
-                echo '{"ResultCode":"0","ResultDesc":"Accepted"}';
+                 return json_encode($result) ;
                
                // $this->saveValidation($data,"SUCCESS", "");
             }else if ($BusinessShortCode == 328103) {
-                echo '{"ResultCode":"0","ResultDesc":"Accepted"}';
+                return json_encode($result) ;
                
                // $this->saveValidation($data,"SUCCESS", "");
             }
             else{
-               echo '{"ResultCode":"0","ResultDesc":"Accepted"}';
+               return json_encode($result) ;
                 //$this->saveValidation($data,"SUCCESS", "");
             }
 
