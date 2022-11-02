@@ -24,7 +24,7 @@ header('Content-Type: application/json; charset=utf-8');  // <-- header declarat
 
         $result ='{"ResultCode":"0","ResultDesc":"Accepted"}';
             if ($BusinessShortCode == 7146151) {
-               eche json_encode($result) ;
+               echo json_encode($result) ;
                
                // $this->saveValidation($data,"SUCCESS", "");
             }else if ($BusinessShortCode == 328100) {
