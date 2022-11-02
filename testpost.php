@@ -1,44 +1,35 @@
 <?php
-header('Content-Type: application/json; charset=utf-8');  // <-- header declaration
-//header("HTTP/1.0 200 OK");
+$request=file_get_contents('php://input');
+//process the received content into an array
+$array = json_decode($request, true);
+//print_r($array);exit;
+$transactiontype="Pay Bill";// $array['TransactionType'];
+$transid=$array['TransID'];
+$transtime=$array['TransTime'];
+$transamount=$array['TransAmount'];
+$businessshortcode=$array['BusinessShortCode'];
+$billrefno=$array['BillRefNumber'];
+$invoiceno=$array['InvoiceNumber'];
+$msisdn=$array['MSISDN'];
+$orgaccountbalance=$array['OrgAccountBalance'];
+$firstname=$array['FirstName'];
+$middlename=$array['MiddleName'];
+$lastname=$array['LastName'];
+$date =date("Y-m-d H:i:s");
 
-        $data = file_get_contents('php://input');
-        //print_r($data);
-        $data = json_decode($data);
+$t = $billrefno;
+$v = 'T';
 
-        // Process the data...
-        // We have been paid by one of our customers!!
-        $TransactionType = $data->{"TransactionType"};
-        $TransID = $data->{"TransID"};
-        $TransTime = $data->{"TransTime"};
-        $TransAmount = $data->{"TransAmount"};
-        $BusinessShortCode = $data->{"BusinessShortCode"};
-        $BillRefNumber = $data->{"BillRefNumber"};
-        $InvoiceNumber = $data->{"InvoiceNumber"};
-        $OrgAccountBalance = $data->{"OrgAccountBalance"};
-        $ThirdPartyTransID = $data->{"ThirdPartyTransID"};
-        $MSISDN = $data->{"MSISDN"};
-        $FirstName = $data->{"FirstName"};
-        $MiddleName = $data->{"MiddleName"};
-        $LastName = $data->{"LastName"};
+if(preg_match("/{$v}/i", $t)) {
 
-        $result ='{"ResultCode":"0","ResultDesc":"Accepted"}';
-            if ($BusinessShortCode == 7146151) {
-               echo json_encode( $result, JSON_UNESCAPED_SLASHES);
-               
-               // $this->saveValidation($data,"SUCCESS", "");
-            }else if ($BusinessShortCode == 328100) {
-                 echo json_encode( $result, JSON_UNESCAPED_SLASHES);
-               
-               // $this->saveValidation($data,"SUCCESS", "");
-            }else if ($BusinessShortCode == 328103) {
-                echo json_encode( $result, JSON_UNESCAPED_SLASHES);
-               
-               // $this->saveValidation($data,"SUCCESS", "");
-            }
-            else{
-                echo json_encode( $result, JSON_UNESCAPED_SLASHES);
-                //$this->saveValidation($data,"SUCCESS", "");
-            }
+$d = array('ResultCode' =>0 ,'ResultDesc'=> "Accepted" );
+header('Content-type: application/json; charset=utf-8');
+echo json_encode($d);
+}else{
+
+$d2 = array('ResultCode' =>1 ,'ResultDesc'=> "Rejected" );
+header('Content-type: application/json; charset=utf-8');
+echo json_encode($d2);
+}
 
 ?>
