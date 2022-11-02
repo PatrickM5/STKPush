@@ -24,20 +24,20 @@ header('Content-Type: application/json; charset=utf-8');  // <-- header declarat
 
         $result ="{'ResultCode':'0','ResultDesc':'Accepted'}";
             if ($BusinessShortCode == 7146151) {
-               echo json_encode($result) ;
+               echo json_encode( $result, JSON_UNESCAPED_SLASHES);
                
                // $this->saveValidation($data,"SUCCESS", "");
             }else if ($BusinessShortCode == 328100) {
-                 echo json_encode($result) ;
+                 echo json_encode( $result, JSON_UNESCAPED_SLASHES);
                
                // $this->saveValidation($data,"SUCCESS", "");
             }else if ($BusinessShortCode == 328103) {
-                echo json_encode($result) ;
+                echo json_encode( $result, JSON_UNESCAPED_SLASHES);
                
                // $this->saveValidation($data,"SUCCESS", "");
             }
             else{
-               echo json_encode($result) ;
+                echo json_encode( $result, JSON_UNESCAPED_SLASHES);
                 //$this->saveValidation($data,"SUCCESS", "");
             }
 
